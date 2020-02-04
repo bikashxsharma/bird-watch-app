@@ -1,0 +1,82 @@
+:root {
+  --primary: #38ADA9;
+  --grey:#7C7C7C;
+  --bg-light:#FAFAFA;
+  --white:#FFFFFF;
+  --bg-grey: #efefef;
+  --shadow:0px 0px 14px 0px rgba(105, 109, 108, 0.75);
+}
+*{
+  margin:0px;
+  padding:0px;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+body{
+  font-family: 'Poppins', sans-serif;
+  font-size:10px;
+  color:var(--grey);
+  background-color: var(--white);
+  min-height: 100vh;
+  margin:auto;
+}
+form{
+  padding:2rem;
+  display:flex;
+  flex-direction: column;
+  margin:2rem;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+.form-group{
+  padding:0.5rem;
+  display:flex;
+  align-items: center;
+}
+.form-group label{
+  text-align: right;
+  padding-right:1rem;
+  display:flex;
+  justify-content: right;
+}
+.form-group laber .text-white{
+  color:white;
+}
+.form-control{
+  display:flex;
+  justify-content: center;
+  background-color: aquamarine;
+}
+.card{
+  padding:1rem;
+  display:flex;
+  justify-content: center;
+}
+.bg-rare{
+  background-color: rgb(179, 137, 23);
+}
+.bg-exRare{
+  background-color: rgb(187, 31, 31);
+}
+.bg-common{
+  background-color: rgb(19, 165, 68);
+}
+.text-white{
+  color:white;
+
+}
+.card-body{
+  font-size:1rem;
+  text-align: left;
+}
+.card-title{
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.card-text{
+  padding:0.3rem;
+  font-size:1.2rem;
+}
