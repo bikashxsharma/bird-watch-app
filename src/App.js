@@ -48,9 +48,10 @@ function EntryList({list, deleteEntry}) {
             <div className={`card mb-2 ${flagColor}`}>
               <div className="card-body">
                 <h4 className="card-title">{itemDate}</h4>
-                <p className="card-text">{item.noteInfo}</p>
-                <p className="card-text">{item.birdName}</p>
-                <p className="card-text">{item.flag}</p>
+                <p className="card-text">Species name : {item.birdName}</p>
+                <p className="card-text">{item.noteInfo}</p>                
+                <p className="card-text">Rarity : {item.flag}</p>                
+                <p><img src={item.imageFile} /></p>
                 <button className="btn btn-sm btn-exRare" 
                   onClick={handleDeleteClick(i)}>Delete</button>
               </div>
@@ -65,22 +66,26 @@ function EntryList({list, deleteEntry}) {
 function Entry({addEntry}) {
   const [noteInfo, setnoteInfo] = useState('');
   const [birdName, setBirdName]= useState('');
+  const [imageFile, uploadImage] = useState('');
   const [flag, setFlag] = useState('');
   const fieldRef = useRef();
   const handleOnChange = e => setnoteInfo(e.target.value);
   const handleOnChangeName = e =>setBirdName(e.target.value);
   const handleFlagChange = e => setFlag(e.target.value);
+  const handleOnChangeImage = e => uploadImage(e.target.value);
   const handleOnSubmit = e => {
     e.preventDefault();
     if(noteInfo && noteInfo.trim().length > 0) {
       addEntry({
         noteInfo,
         birdName,
+        imageFile,
         flag,
         date: Date.now()
       });
       setnoteInfo('');
       setBirdName('');
+      uploadImage('');
       setFlag('');
     }
   }
@@ -115,10 +120,20 @@ function Entry({addEntry}) {
         maxLength={40}
         />
       </div>
+      <div className="form-group">
+      <label htmlFor="birdName">Upload your image</label>
+      <input
+        className="form-control"
+        onChange={handleOnChangeImage} 
+        type="text" 
+        id="imageFile"
+        name="imageFile" 
+        />
+      </div>
       
 
       <div class="form-check form-check-inline mb-3">
-        
+        <label>Select the rarity</label>
         <input className="form-check-input" 
           id="exRare" type="radio" name="rarity" 
           value="exRare" defaultChecked={flag === 'exRare'} 
@@ -138,7 +153,7 @@ function Entry({addEntry}) {
           value="common" defaultChecked={flag === 'common'} 
           onChange={handleFlagChange}/>
         <label className="form-check-label bg-common " 
-          htmlFor="common">Common1111111</label>
+          htmlFor="common">Common</label>
       </div>
 
       <button  
