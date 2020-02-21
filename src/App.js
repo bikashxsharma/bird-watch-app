@@ -8,10 +8,10 @@ function useJournal() {
   const [entries, setEntries] = useState([]);
   
   const getEntriesFromStorage = () => JSON.parse(
-    window.localStorage.getItem('journalEntries')
+    window.localStorage.getItem('birdEntries')
   );
   const setEntriesToStorage = items => 
-  window.localStorage.setItem('journalEntries', JSON.stringify(items));
+  window.localStorage.setItem('birdEntries', JSON.stringify(items));
   useEffect(() => {
     const entriesFromStorage = getEntriesFromStorage();
     if(entriesFromStorage) {
