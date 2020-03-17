@@ -13,70 +13,89 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+:root{
+  font-size: 8px;
+  
+}
 body{
   font-family: 'Poppins', sans-serif;
-  font-size:10px;
+  font-size:2rem;
   color:var(--grey);
-  background-color: var(--white);
-  min-height: 100vh;
+  background-color: var(--bg-light);
   margin:auto;
 }
-form{
-  padding:2rem;
-  display:flex;
-  flex-direction: column;
-  margin:2rem;
-  font-size: 1.2rem;
-  justify-content: center;
-  align-items: center;
+.App{
+  text-align: center;
+  margin:4rem;
+}
+
+.form{
+  background-color: var(--white);
+  max-width: 500px;
+  width:100%;
+  margin:auto;
 }
 .form-group{
-  padding:0.5rem;
+  padding:1.5rem;
   display:flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  
 }
 .form-group label{
-  text-align: right;
-  padding-right:1rem;
-  display:flex;
-  justify-content: right;
-}
-.form-group laber .text-white{
-  color:white;
-}
-.form-control{
-  display:flex;
-  justify-content: center;
-  background-color: aquamarine;
-}
-.card{
-  padding:1rem;
-  display:flex;
-  justify-content: center;
-}
-.bg-rare{
-  background-color: rgb(179, 137, 23);
-}
-.bg-exRare{
-  background-color: rgb(187, 31, 31);
-}
-.bg-common{
-  background-color: rgb(19, 165, 68);
-}
-.text-white{
-  color:white;
+  margin-right:auto;
 
 }
-.card-body{
-  font-size:1rem;
-  text-align: left;
+.form-group input{
+  padding: 10px 5px;
 }
-.card-title{
-  font-size: 0.9rem;
-  font-weight: 500;
+.form-group textarea{
+  padding: 10px 5px;
 }
-.card-text{
-  padding:0.3rem;
-  font-size:1.2rem;
+.form-group .radio-options{
+  margin-right:auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top:1rem;
+}
+.form-group .radio-input{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding:1rem;
+}
+
+.form-buttons{
+  padding:1.5rem;
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  
+}
+.form-buttons .button{
+  width:100%;
+  padding:10px 0px;
+  margin:0 5px 0 0 ;
+}
+
+/*for smaller screens*/
+
+@media only screen and (max-width: 600px)  {
+
+  .form-group .radio-options{
+    margin-right:auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top:1rem;
+  }
+  .form-group .radio-input{
+    display:flex;
+    justify-content: flex-start;
+  }
+
 }
