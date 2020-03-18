@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
-import moment from 'moment';
+
+// comp
+
+import BirdList from './components/BirdList'
 
 const App = () => {
 
@@ -23,7 +26,7 @@ const App = () => {
   // check for storage data and updates birdDatas  
   useEffect(() => {
     const entriesFromStorage = getDataFromStorage();
-    console.log(entriesFromStorage);
+
     if (entriesFromStorage) {
       setBirdDatas(entriesFromStorage);
     }
@@ -38,6 +41,7 @@ const App = () => {
 
   }
 
+  // getting value from input field
   const updateName = (e) => {
     setName(e.target.value);
   }
@@ -60,60 +64,60 @@ const App = () => {
 
   }
 
+  // function to remove data from list
+
+  const removeData = (id) => {
+    const dataCopy = [...birdDatas];
+    if (id !== -1) {
+      dataCopy.splice(id, 1);
+      setBirdDatas(dataCopy);
+      setDataToStorage(dataCopy);
+
+    }
+  }
+
+  // toggle CSS to show or hide some class
+  const toggleCSS = () => {
+    const form = document.getElementById("form");
+    const mainCTA = document.getElementById("main-cta");
+    form.classList.toggle("display-none");
+    mainCTA.classList.toggle("display-none");
+  }
+
   return (
     <div className="App">
-      <h2>Bird Watch</h2>
-      <form className="form" onSubmit={handleSubmit}>
-        <h3>Enter bird Information</h3>
+      <h2>birdWatch</h2>
+      <form id="form" className="form display-none" onSubmit={handleSubmit}>
+        <h3>Enter a bird Information</h3>
         <div className="form-group">
           <label>Name</label>
-          <input type="text" placeholder="Species name.." onChange={updateName} />
+          <input type="text" placeholder="Species name.." required onChange={updateName} />
         </div>
         <div className="form-group">
           <label>Info</label>
-          <textarea placeholder="Add extra information.." onChange={updateInfo}></textarea>
+          <textarea placeholder="Add extra information.." required onChange={updateInfo}></textarea>
         </div>
         <div className="form-group">
           <label> Select the rarity type:</label>
           <div className="radio-options">
-            <div className="radio-input"> <input type="radio" name="rarity" value="common" onChange={updateRarity} /> Common</div>
-            <div className="radio-input"><input type="radio" name="rarity" value="rare" onChange={updateRarity} /> Rare</div>
-            <div className="radio-input"><input type="radio" name="rarity" value="extremely rare" onChange={updateRarity} /> Extremely rare</div>
+            <div className="radio-input"> <input type="radio" name="rarity" value="common" required onChange={updateRarity} /> Common</div>
+            <div className="radio-input"><input type="radio" name="rarity" value="rare" required onChange={updateRarity} /> Rare</div>
+            <div className="radio-input"><input type="radio" name="rarity" value="extremely rare" required onChange={updateRarity} /> Extremely rare</div>
           </div>
           <div className="form-buttons">
             <input type="submit" className="button" value="Save" />
-            <input type="reset" className="button" value="Cancel" />
+            <input type="reset" className="button" value="Close" onClick={toggleCSS} />
           </div>
 
         </div>
       </form>
-
-      <div className="bird-info-results">
-        {
-
-          birdDatas.map(data => (
-
-
-            <div className="bird-card">
-              <p>{moment(data.date).fromNow()}</p>
-              <p>{data.name}</p>
-              <p>{data.info}</p>
-              <p>{data.rarity}</p>
-              <hr />
-
-            </div>
-
-          ))
-        }
-
+      <div className="form">
+        <div className="form-buttons">
+          <input id="main-cta" type="submit" className="button CTA" value="Add a bird info" onClick={toggleCSS} />
+        </div>
       </div>
 
-
-
-
-
-
-
+      <BirdList data={birdDatas} f={removeData} />
     </div>
   )
 

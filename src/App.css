@@ -4,7 +4,7 @@
   --bg-light:#FAFAFA;
   --white:#FFFFFF;
   --bg-grey: #efefef;
-  --shadow:0px 0px 14px 0px rgba(105, 109, 108, 0.75);
+  --shadow:0px 0px 14px 0px rgba(105, 109, 108, 0.212);
 }
 *{
   margin:0px;
@@ -30,12 +30,51 @@ body{
   text-align: center;
   margin:4rem;
 }
+.App h2{
+  color:var(--primary)
+}
+
+.display-none{
+  display:none;
+  
+}
+.CTA{
+  background-color: var(--primary);
+  color:var(--white);
+  box-shadow: non;
+  border: none;
+  font-weight: 600;
+  font-size: 2rem;
+  transition: 0.5s;
+}
+.CTA:hover{
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.sort-filter{
+  display:flex;
+  flex-direction: row;
+  margin-top:1rem;
+  justify-content: flex-end;
+}
+.sort-button{
+  color:var(--primary);
+  margin-left:5px;
+}
+.sort-button:hover{
+  cursor: pointer;
+  color:#256d6b;
+}
 
 .form{
   background-color: var(--white);
   max-width: 500px;
   width:100%;
   margin:auto;
+  transition: 0.3s;
+}
+.form h3{
+  padding-top:2rem;
 }
 .form-group{
   padding:1.5rem;
@@ -97,5 +136,78 @@ body{
     display:flex;
     justify-content: flex-start;
   }
+  .card-header{
+    display:flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-right:1rem;
+  }
+  .rarity-type{
+   margin-left:0px!important;
+  }
 
+}
+
+/*Bird list*/
+.bird-list{
+  margin:auto;
+  max-width: 500px;
+}
+.bird-card{
+  padding:1rem;
+  margin:10px auto 5px auto ;
+  box-shadow:var(--shadow) ;
+}
+.card-header{
+  display:flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-right:1rem;
+}
+.bird-card .name{
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: left;
+  padding:1rem 1rem 0 1rem;
+  color:var(--primary);
+}
+.bird-card .date-added{
+  padding:0 0 0 1rem;
+  text-align:left;
+  color:var(--grey);
+}
+.rarity-type{
+  margin-left:auto;
+}
+.rarity-type.common{
+  background-color: rgb(7, 211, 68);
+  padding: 1rem;
+  color: #100c0c;
+  width:30%;  
+}
+.rarity-type.rare {
+  background-color: #dedd1d;
+  padding: 1rem;
+  color: #100c0c;
+  width:30%;  
+}
+.rarity-type.extremelyrare{
+  background-color: rgb(255, 51, 0);
+  padding: 1rem;
+  color:#FFFFFF; 
+  width:30%;   
+}
+.bird-card .note-info{
+  display:flex;
+  justify-content: flex-start;
+  padding:2rem 0 0 1rem;
+  font-weight: 600;
+  align-items: baseline;
+}
+.note-info p{
+  font-weight: 400;
+  padding-left:1rem;
+  width:100%;
+  margin:1rem;
+  text-align: left;
 }
