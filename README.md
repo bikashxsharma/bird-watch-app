@@ -1,4 +1,4 @@
-<img src="./screenshots/bird-watch.png" />
+<img src="http://bikashxsharma.com/projects/thumbnails/birdwatch_thumbnail.png" />
 
 # birdWatch
  A responsive web application where users can add information about birds. 
