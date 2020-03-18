@@ -4,20 +4,16 @@ import moment from 'moment';
 const BirdList = (props) => {
 
     const sortByDate = () => {
-        const newDataList = props.data;
-        newDataList.sort((a, b) => a.date > b.date ? 1 : -1);
-        return newDataList;
+        return props.data.sort((a, b) => a.date < b.date ? 1 : -1);
     }
     const newData = sortByDate();
+
 
     if (props.data.length > 0) {
         return (
 
             <div className="bird-list">
-                <div className="sort-filter">
-                    <p>Sort by</p> <div className="sort-button" onClick={() => sortByDate}>Time</div>
 
-                </div>
                 {
 
                     newData.map((data, id) => (
