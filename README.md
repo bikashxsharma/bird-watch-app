@@ -8,10 +8,10 @@
 
 I did this project as a part of the coding exercise. The instruction was as follow:
 ##### Main view should include a dynamic list of observations
--- Observations should be ordered by timestamp
+- Observations should be ordered by timestamp
 - Observation should display name of species, rarity, an excerpt of notes, and date and time
 ##### Main view should include a button for adding new observation
--- Clicking the button should navigate the user to observation form view
+- Clicking the button should navigate the user to observation form view
 ##### In observation form view user should be able to add a new observation
 - User should be able to input the name of the species and notes
 - User should be able to select rarity from a predefined list (common, rare, extremely rare)
