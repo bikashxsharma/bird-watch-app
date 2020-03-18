@@ -2,7 +2,7 @@
 
 # birdWatch
  A responsive web application where users can add information about birds. 
-##### Check the live demo from this link: https://birdwatch-app.netlify.comb
+##### Check the live demo from this link: https://birdwatch-app.netlify.com
 
 **Summary**
 
