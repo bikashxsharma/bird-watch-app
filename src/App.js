@@ -105,7 +105,7 @@ const App = () => {
             <div className="radio-input"><input type="radio" name="rarity" value="extremely rare" required onChange={updateRarity} /> Extremely rare</div>
           </div>
           <div className="form-buttons">
-            <input type="submit" className="button" value="Save" />
+            <input type="submit" className="button CTA" value="Save" />
             <input type="reset" className="button" value="Close" onClick={toggleCSS} />
           </div>
 
